@@ -3,6 +3,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Sign in</string>
     <string name="view_cart">View cart</string>
+    <string name="logout">Log Out</string>
 
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>

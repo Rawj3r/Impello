@@ -1,7 +1,9 @@
 package za.co.roger.nkosi.impello;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -105,11 +107,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             try{
                 data = jsonObject.getString("logged");
-                Log.e("data", data);
+                String memID = jsonObject.getString("memID");
 
                 if (data.equals("1")){
+
+                    SharedPreferences sp = getSharedPreferences("impello_memID", Context.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = sp.edit();
+                    editor.putString("memID", memID);
+                    editor.commit();
                     Intent i = new Intent(getApplicationContext(), Home.class);
                     startActivity(i);
+                    finish();
                 }
             }catch (JSONException e){
                 e.printStackTrace();

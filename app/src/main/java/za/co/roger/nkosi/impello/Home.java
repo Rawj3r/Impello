@@ -1,6 +1,8 @@
 package za.co.roger.nkosi.impello;
 
 import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -71,7 +73,7 @@ public class Home extends AppCompatActivity implements APIController.HomeCallBac
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.viewcart) {
             return true;
         }
 
@@ -134,10 +136,13 @@ public class Home extends AppCompatActivity implements APIController.HomeCallBac
 
             holder.itemView.setSelected(productsModelList.contains(position));
             holder.itemView.setOnClickListener(new View.OnClickListener() {
-                int id = model.pid;
+                int pid = model.pid;
                 @Override
                 public void onClick(View view) {
-                    new AddCart().execute(""+id, "25", "1");
+                    SharedPreferences preferences = getSharedPreferences("impello_memID", Context.MODE_PRIVATE);
+                    String mid = preferences.getString("memID", "");
+                    preferences.getString("memID", null);
+                    new AddCart().execute(""+pid, mid, "1");
                 }
             });
         }
