@@ -2,6 +2,7 @@ package za.co.roger.nkosi.impello;
 
 import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -74,7 +75,8 @@ public class Home extends AppCompatActivity implements APIController.HomeCallBac
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.viewcart) {
-            return true;
+            Intent intent = new Intent(this, ListCart.class);
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

@@ -15,4 +15,8 @@ public interface API {
     @FormUrlEncoded
     @POST("/index.php")
     void getProducts(@FieldMap Map<String, String> map, Callback<String> callback);
+
+    @FormUrlEncoded
+    @POST("/index.php")
+    void getCart(@FieldMap Map<String, String> map, Callback<String> callback);
 }
