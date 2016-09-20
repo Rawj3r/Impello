@@ -28,7 +28,13 @@
             android:name=".Home"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ListCart"
+        <activity
+            android:name=".ListCart"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Cart"
+            android:label="@string/title_activity_cart"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

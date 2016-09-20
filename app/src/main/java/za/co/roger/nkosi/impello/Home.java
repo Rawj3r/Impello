@@ -48,6 +48,8 @@ public class Home extends AppCompatActivity implements APIController.HomeCallBac
         controller = new APIController(this);
         controller.fetchProducts();
 
+
+
         recyclerView = (RecyclerView)findViewById(R.id.products_list);
 
         recyclerView.setHasFixedSize(true);
