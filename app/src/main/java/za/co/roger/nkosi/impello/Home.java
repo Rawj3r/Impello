@@ -35,6 +35,7 @@ public class Home extends AppCompatActivity implements APIController.HomeCallBac
 
     private APIController controller;
     private RecyclerView recyclerView;
+
     private ProductAdapter adapter;
     private List<ProductsModel> list =  new ArrayList<>();
     private String response;

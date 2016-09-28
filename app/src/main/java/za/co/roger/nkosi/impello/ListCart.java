@@ -11,17 +11,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListCart extends AppCompatActivity implements APIController.GetCartCallBackListener{
+public class ListCart extends AppCompatActivity implements APIController.GetCartCallBackListener, View.OnClickListener{
 
     private APIController controller;
     private RecyclerView recyclerView;
     private CartAdapter adapter;
     private List<CartModel> list = new ArrayList<>();
+    private Button checkout;
 
 
     @Override
@@ -35,6 +37,9 @@ public class ListCart extends AppCompatActivity implements APIController.GetCart
         controller.fetchcart();
 
         recyclerView = (RecyclerView)findViewById(R.id.get_cart);
+        checkout = (Button)findViewById(R.id.checkout);
+
+        checkout.setOnClickListener(this);
 
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -89,6 +94,13 @@ public class ListCart extends AppCompatActivity implements APIController.GetCart
     @Override
     public void onFetchFailed() {
 
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+
+        }
     }
 
     public class CartAdapter extends RecyclerView.Adapter<CartAdapter.Holder>{

@@ -63,6 +63,7 @@
                     android:elevation="3dp"
                     card_view:cardCornerRadius="3dip">
                     <Button
+                        android:id="@+id/checkout"
                         android:text="Checkout"
                         android:layout_width="match_parent"
                         card_view:cardCornerRadius="3dip"
